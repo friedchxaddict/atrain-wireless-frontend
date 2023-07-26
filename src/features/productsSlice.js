@@ -11,7 +11,7 @@ export const productsFetch = createAsyncThunk(
   "products/productsFetch",
   async () => {
     const response = await axios.get(
-      "https://atrain-wireless-backend.vercel.app/products.js"
+      "https://atrain-wireless-backend.vercel.app/products"
     );
     return response?.data;
   }
