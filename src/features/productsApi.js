@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const productsApi = createApi({
   reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://atrain-wireless-backend.vercel.app",
+    baseUrl: "https://atrain-backend.onrender.com",
   }),
   endpoints: (builder) => ({
     getAllProducts: builder.query({
