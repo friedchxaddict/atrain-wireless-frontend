@@ -11,7 +11,7 @@ export const productsFetch = createAsyncThunk(
   "products/productsFetch",
   async () => {
     const response = await axios.get(
-      "https://atrain-backend.onrender.com/products"
+      "https://friendly-dove-apron.cyclic.cloud/products"
     );
     return response?.data;
   }
