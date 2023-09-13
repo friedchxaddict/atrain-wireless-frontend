@@ -13,6 +13,7 @@ export const productsFetch = createAsyncThunk(
     const response = await axios.get(
       "https://friendly-dove-apron.cyclic.cloud/products"
     );
+    console.log(response);
     return response?.data;
   }
 );
@@ -21,18 +22,19 @@ const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {},
-  extraReducers: {
-    [productsFetch.pending]: (state, action) => {
-      state.status = "pending";
-    },
-    [productsFetch.fulfilled]: (state, action) => {
-      state.status = "success";
-      state.items = action.payload;
-    },
-    [productsFetch.rejected]: (state, action) => {
-      state.status = "rejected";
-      state.error = action.payload;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(productsFetch.pending, (state, action) => {
+        state.status = "pending";
+      })
+      .addCase(productsFetch.fulfilled, (state, action) => {
+        state.status = "success";
+        state.items = action.payload;
+      })
+      .addCase(productsFetch.rejected, (state, action) => {
+        state.status = "rejected";
+        state.error = action.payload;
+      });
   },
 });
 
