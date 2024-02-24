@@ -1,5 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
   items: [],
@@ -8,28 +8,30 @@ const initialState = {
 };
 
 export const productsFetch = createAsyncThunk(
-  "products/productsFetch",
+  'products/productsFetch',
   async () => {
-    const response = await axios.get("https://fair-gray-fossa-tam.cyclic.app");
+    const response = await axios.get(
+      /*"https://fair-gray-fossa-tam.cyclic.app",*/ 'https://atrain-backend.onrender.com'
+    );
     return response?.data;
   }
 );
 
 const productsSlice = createSlice({
-  name: "products",
+  name: 'products',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(productsFetch.pending, (state, action) => {
-        state.status = "pending";
+        state.status = 'pending';
       })
       .addCase(productsFetch.fulfilled, (state, action) => {
-        state.status = "success";
+        state.status = 'success';
         state.items = action.payload;
       })
       .addCase(productsFetch.rejected, (state, action) => {
-        state.status = "rejected";
+        state.status = 'rejected';
         state.error = action.payload;
       });
   },
