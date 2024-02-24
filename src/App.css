@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito", san-serif;
+  font-family: 'Nunito', san-serif;
 }
 
 /* NavBar */
@@ -278,4 +278,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-bar h2 {
+    font-size: 25px;
+    /*text-shadow: 2px 2px rgba(255, 255, 255, 0.5);*/
+  }
 }
