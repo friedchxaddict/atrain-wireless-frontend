@@ -18,7 +18,10 @@ const Home = () => {
   return (
     <div className="home-container">
       {isLoading ? (
-        <SpinnerLoader />
+        <div>
+          <SpinnerLoader />
+          <p>Loading...</p>
+        </div>
       ) : error ? (
         <p>An error occurred..</p>
       ) : (
