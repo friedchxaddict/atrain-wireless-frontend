@@ -1,9 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { addToCart } from '../features/cartSlice';
-import SpinnerLoader from './SpinnerLoader';
-
 import { useGetAllProductsQuery } from '../features/productsApi';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
@@ -19,8 +18,13 @@ const Home = () => {
     <div className="home-container">
       {isLoading ? (
         <div>
-          <SpinnerLoader />
-          <p>Loading...</p>
+          <Spinner
+            className="spinner"
+            animation="border"
+            variant="light"
+            role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
         </div>
       ) : error ? (
         <p>An error occurred..</p>
