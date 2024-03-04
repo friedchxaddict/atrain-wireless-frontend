@@ -70,6 +70,29 @@
   font-weight: 400;
   text-align: center;
 }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  color: black !important;
+  width: 150px;
+  height: 150px;
+}
+
 .products {
   display: flex;
   justify-content: space-between;
