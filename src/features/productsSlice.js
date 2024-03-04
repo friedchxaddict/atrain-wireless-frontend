@@ -11,7 +11,7 @@ export const productsFetch = createAsyncThunk(
   'products/productsFetch',
   async () => {
     const response = await axios.get(
-      'https://fair-gray-fossa-tam.cyclic.app' //'https://atrain-backend.onrender.com'
+      /*'https://fair-gray-fossa-tam.cyclic.app'*/ 'https://atrain-backend.onrender.com'
     );
     return response?.data;
   }
