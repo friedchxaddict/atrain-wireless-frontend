@@ -88,7 +88,7 @@
 }
 
 .spinner {
-  color: black !important;
+  color: black;
   width: 150px;
   height: 150px;
 }
