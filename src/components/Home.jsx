@@ -17,9 +17,9 @@ const Home = () => {
   return (
     <div className="home-container">
       {isLoading ? (
-        <div /*className="spinner-container"*/>
+        <div className="spinner-container">
           <Spinner className="spinner" animation="border" role="status">
-            <span /*className="visually-hidden"*/>Loading...</span>
+            <span className="visually-hidden">Loading...</span>
           </Spinner>
         </div>
       ) : error ? (
